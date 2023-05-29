@@ -4,11 +4,10 @@
 
 ## Installation
 
-## create directory for the project i.e. "django-htmx"
-
 ## clone the repo:
 
-- https://github.com/hj-winter/django-htmx.git
+- git clone https://github.com/hj-winter/django-htmx.git
+- cd django-htmx
 
 ### create virtual environment
 
