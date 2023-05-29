@@ -4,7 +4,7 @@
 
 ## Installation
 
-## clone the repo:
+### clone the repo:
 
 - git clone https://github.com/hj-winter/django-htmx.git
 - cd django-htmx
@@ -26,7 +26,7 @@
 
 - python manage.py makemigrations
 - python manage.py migrate
-- python manage.py createseupruser (if needed)
+- python manage.py createsuperuser (if needed)
 
 ### load the testdata
 
