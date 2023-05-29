@@ -1,0 +1,8 @@
+{% for result in results %}
+<tr>
+  <th scope="row">{{ forloop.counter }}</th>
+  <td>{{ result.first_name }}</td>
+  <td>{{ result.last_name }}</td>
+  <td>{{ result.email }}</td>
+</tr>
+{% endfor %}

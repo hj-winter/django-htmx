@@ -1,0 +1,38 @@
+{% extends 'customers/base.html' %}
+{% load static %}
+{% block title %}Homepage{% endblock %}
+{% block content %}
+    <div class="container justify-content-center d-flex pt-5">
+        <div class="container d-flext pt-5 justify-content-center">
+            <h1 class="h1 text-center">Customers</h1>
+            <div class="container d-flex pt-3">
+                <input class="form-control"
+                       type="text"
+                       name="query"
+                       autofocus
+                       placeholder='type something...'
+                       hx-post="{% url 'customers:search' %}"
+                       hx-trigger="search, keyup delay:500ms changed"
+                       hx-target="#search-results"
+                       hx-indicator=".htmx-indicator">
+            </div>
+            <div class="container my-5">
+                <form action="{% url 'customers:load-data' %}" medthod='POST'>
+                    <table class="table table-striped my-5">
+                        <thead class='table-dark'>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id='search-results'>
+                            <!-- search content goes here -->
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
