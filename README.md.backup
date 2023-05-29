@@ -6,7 +6,7 @@
 
 ### clone the repo:
 
-- git clone https://github.com/hj-winter/angondeln-htmx.git
+- git clone https://github.com/hj-winter/django-htmx.git
 - cd django-htmx
 
 ### create virtual environment
