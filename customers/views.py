@@ -1,6 +1,8 @@
 from django.db.models import Q
 from django.shortcuts import render
+from django.views.generic import CreateView
 
+from .forms import CustomerForm
 from .models import Customer
 
 
@@ -27,3 +29,11 @@ def search(request):
         )
         context = {"results": results}
     return render(request, "customers/search_results.html", context)
+
+
+class AddCustomerView(CreateView):
+    model = Customer
+    form_class = CustomerForm
+    template_name = "customers/add_customer.html"
+    # fields = "__all__"
+    # fields = ('first_name', 'last_name')

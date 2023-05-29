@@ -1,0 +1,16 @@
+{% extends 'customers/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Add Customer{% endblock %}
+{% block content %}
+    <h1 class="h1 text-center pt-5">Add Customer</h1>
+    <div class="container d-flex justify-content-center pt-5">
+        <div class="form-group">
+            <form metho="POST">
+                {% csrf_token %}
+                {% crispy form %}
+                <button class='btn btn-secondary'>Add</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
