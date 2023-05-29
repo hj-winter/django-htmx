@@ -35,3 +35,7 @@
 ### run the server
 
 - python manage.py runserver
+
+### load the page in the brower
+
+- localhost:8000
