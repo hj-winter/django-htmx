@@ -7,9 +7,7 @@ from .models import Customer
 
 
 def index(request):
-    # customers = Customer.objects.all()[:20]
-    # context = {"customers": customers}
-    return render(request, "customers/index.html")
+    return render(request, "customers/act_search_demo.html")
 
 
 def load_data(request):
@@ -28,12 +26,10 @@ def search(request):
             | Q(email__icontains=search_item)
         )
         context = {"results": results}
-    return render(request, "customers/search_results.html", context)
+    return render(request, "customers/htmx/search_results.html", context)
 
 
 class AddCustomerView(CreateView):
     model = Customer
     form_class = CustomerForm
     template_name = "customers/add_customer.html"
-    # fields = "__all__"
-    # fields = ('first_name', 'last_name')

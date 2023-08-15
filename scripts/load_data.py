@@ -19,3 +19,4 @@ def run():
         )
         c.save()
         print(f"'\r' {cnt} Rows processed.", end="")
+    print("\n")

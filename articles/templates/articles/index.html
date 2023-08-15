@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Artikelauswahl{% endblock %}
+{% block content %}
+    {% include 'partials/_alerts.html' %}
+    <div class="container my-5 text-center">
+        <h1>Value Select</h1>
+        <div class="container d-flex py-5">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Artikelnummer</th>
+                        <th>Name</th>
+                        <th>Thema</th>
+                        <th>Subthema</th>
+                        <th>Produkttyp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Search results from 'search_items.html' -->
+                    {% for article in articles %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>
+                                <a href="{% url 'articles:detail' article.id %}">{{ article.number }}</a>
+                            </td>
+                            <td>{{ article.name }}</td>
+                            <td>{{ article.theme_main }}</td>
+                            <td>{{ article.theme_sub }}</td>
+                            <td>{{ article.prod_type }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

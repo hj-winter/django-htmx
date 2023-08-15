@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+    Articledetail
+{% endblock title %}
+{% block content %}
+    {% include "partials/_alerts.html" %}
+    <div class="container my-5">
+        <section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Name</strong>
+                        <div class="col-md-9">{{ article.name }}</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Number</strong>
+                        <div class="col-md-9">{{ article.number }}</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Description</strong>
+                        <div class="col-md-9">{{ article.description }}</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Theme Main</strong>
+                        <div class="col-md-9">{{ article.theme_main }}</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Theme Sub</strong>
+                        <div class="col-md-9">{{ article.theme_sub }}</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Product Type</strong>
+                        <div class="col-md-9">{{ article.prod_type }}</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+{% endblock content %}
