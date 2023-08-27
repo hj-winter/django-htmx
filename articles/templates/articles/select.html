@@ -5,8 +5,10 @@
     <div class="container-lg my-5">
         <div class="row justify-content-center">
             <div class="col-md-3">
+                <!-- Select Box Main Theme -->
                 <select class="form-select"
                         name="theme_main"
+                        id='clear_Selects'
                         autofocus
                         hx-trigger="change, load"
                         hx-get="{% url 'articles:themes' %}"
@@ -22,7 +24,6 @@
                         hx-trigger="change"
                         hx-get="{% url 'articles:themes_sub' %}"
                         hx-target="#prod_types">
-                    <option disabled selected>Sub Thema</option>
                     <!-- Content from HTMX response -->
                 </select>
             </div>

@@ -13,6 +13,7 @@ def run():
     ProductType.objects.all().delete()
     Article.objects.all().delete()
 
+    cnt = 0
     for cnt, row in enumerate(reader, start=1):
         typ, created = ProductType.objects.get_or_create(name=row[7].strip())
         t_s, created = ThemeSub.objects.get_or_create(name=row[6].strip())

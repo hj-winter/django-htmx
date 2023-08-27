@@ -22,7 +22,7 @@ class DetailView(generic.DetailView):
 class CreateView(SuccessMessageMixin, generic.CreateView):
     form_class = ArticleForm
     template_name = "articles/edit.html"
-    success_message = "You sucessully created e new Article!"
+    success_message = "You sucessully created a new Article!"
 
 
 def index(request):
@@ -37,7 +37,7 @@ def index(request):
 
 def themes(request):
     theme_main = request.GET.get("theme_main")
-    theme_list = []
+    theme_list = ["Subkategorie wählen"]
     sub_themes = (
         Article.objects.select_related("theme_main", "theme_sub")
         .filter(theme_main__name=theme_main)
@@ -49,12 +49,12 @@ def themes(request):
         for item in sub_themes:
             theme_list.append(item["theme_sub__name"])
 
-    return render(request, "articles/theme_subs.html", {"themes": theme_list})
+    return render(request, "htmx/theme_subs.html", {"themes": theme_list})
 
 
 def themes_sub(request):
     theme_sub = request.GET.get("theme_sub")
-    type_list = []
+    type_list = ["Produkttyp wählen"]
     prod_types = (
         Article.objects.select_related("theme_sub", "prod_type")
         .filter(theme_sub__name=theme_sub)
