@@ -14,9 +14,11 @@
     </head>
     <body>
         {% include 'partials/_navbar.html' %}
-        {% block content %}<!-- Content goes here -->{% endblock %}
+        {% block content %}
+        <!-- Content goes here -->
+        {% endblock %}
         <!-- Option 1: Bootstrap 5 Bundle with Popper -->
-        <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
         <!-- HTMX -->
         <script src="{% static 'js/htmx.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
@@ -24,9 +26,9 @@
     document.body.addEventListener('htmx:configRequest', (event) => {
       event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     });
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout();
-    });
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   setTimeout();
+    // });
         </script>
     </body>
 </html>

@@ -1,14 +1,26 @@
-setTimeout(function() {
-  $("#message").fadeOut("slow");
-}, 3000);
+function userScroll() {
+  const navbar = document.querySelector('.navbar');
+  const toTopBtn = document.querySelector('#to-top');
 
-const clearBtn = document.querySelector("#clear");
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-sticky');
+      toTopBtn.classList.add('show');
+    } else {
+      navbar.classList.remove('navbar-sticky');
+      toTopBtn.classList.remove('show');
+    }
+  });
+}
 
-clearBtn.addEventListener("click", () => alert("Clear items"));
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 document.body.addEventListener("htmx:configRequest", (event) => {
   event.detail.headers["X-CSRFToken"] = "{{ csrf_token }}";
 });
-document.addEventListener("DOMContentLoaded", function() {
-  setTimeout();
-});
+
+document.querySelector('#to-top').addEventListener('click', scrollToTop);
+document.addEventListener('DOMContentLoaded', userScroll);

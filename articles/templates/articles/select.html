@@ -13,23 +13,27 @@
                         hx-trigger="change, load"
                         hx-get="{% url 'articles:themes' %}"
                         hx-target="#themes_sub">
-                    <option disabled selected>Thema</option>
+                    <option disabled selected>Hauptkategorie</option>
                     {% for theme in themes %}<option value="{{ theme }}">{{ theme }}</option>{% endfor %}
                 </select>
             </div>
             <div class="col-md-3">
+                <!-- Select Box Sub Theme -->
                 <select class="form-select"
                         name="theme_sub"
                         id="themes_sub"
+                        autofocus
                         hx-trigger="change"
                         hx-get="{% url 'articles:themes_sub' %}"
                         hx-target="#prod_types">
                     <!-- Content from HTMX response -->
+                    <option disabled selected>Subkategorie</option>
                 </select>
             </div>
             <div class="col-md-3">
                 <select class="form-select" name="prod_types" id="prod_types">
                     <!-- Content from HTMX response -->
+                    <option disabled selected>Produkttyp</option>
                 </select>
             </div>
         </div>
